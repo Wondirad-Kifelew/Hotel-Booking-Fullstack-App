@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(clerkMiddleware())
 
 // routes
-app.use('/api/clerk', clerkWebHooks) 
+app.post('/api/clerk', clerkWebHooks) 
 app.get('/', (req, res)=>res.send("API is working!"))
 
 
