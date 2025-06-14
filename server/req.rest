@@ -1,6 +1,6 @@
-# POST  http://localhost:5000/test
-# Content-Type: application/json
+POST  http://localhost:5000/api/test
+Content-Type: application/json
 
-# {
-#     "s":34, "r":44
-# }
+{
+    "s":34, "r":44
+}
