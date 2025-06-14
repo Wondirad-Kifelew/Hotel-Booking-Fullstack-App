@@ -3,8 +3,10 @@ import User from "../models/user.js";
 
 
 const clerkWebHooks = async (req, res)=>{
-try {
+console.log("in clerk handler")
 
+try {
+console.log("in clerk handlers try")
     const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
     
     //the signed header from clerk by svix  
