@@ -2,7 +2,6 @@ import { Webhook } from "svix";
 import User from "../models/user.js";
 
 
-
 const clerkWebHooks = async (req, res)=>{
 try {
 
@@ -17,7 +16,7 @@ try {
     // verifying the signature
     await whook.verify(JSON.stringify(req.body), headers)
 
-
+   console.log("what the webhook sent ooks like: , ", req.body)
     // getting data from req body
     const {data, type} = req.body
 
@@ -34,11 +33,13 @@ try {
             break;
         }
         case 'user.updated':{
+            console.log("in updated")
             await User.findByIdAndUpdate(data.id, userData)
             break;
         }
         case 'user.deleted':{
-            await User.findByIdAndDelete(userData)
+            console.log("in deleted")
+            await User.findByIdAndDelete(data.id)
             break;
         }   
     
